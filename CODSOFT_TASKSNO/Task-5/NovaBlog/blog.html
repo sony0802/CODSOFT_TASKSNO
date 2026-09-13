@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Article | NovaBlog</title>
+
+    <meta name="description"
+        content="Read useful stories, ideas and inspiration from NovaBlog.">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- =========================
+         HEADER
+    ========================== -->
+
+    <header class="header">
+
+        <div class="container header-inner">
+
+            <a href="index.html" class="logo">
+                Nova<span>Blog</span>
+            </a>
+
+            <button class="menu-btn"
+                id="menuBtn"
+                aria-label="Open navigation">
+                ☰
+            </button>
+
+            <nav class="nav" id="navMenu">
+
+                <a href="index.html">
+                    Home
+                </a>
+
+                <a href="technology.html">
+                    Technology
+                </a>
+
+                <a href="travel.html">
+                    Travel
+                </a>
+
+                <a href="food.html">
+                    Food
+                </a>
+
+                <a href="lifestyle.html">
+                    Lifestyle
+                </a>
+
+            </nav>
+
+        </div>
+
+    </header>
+
+
+    <!-- =========================
+         ARTICLE HERO
+    ========================== -->
+
+    <section class="article-hero"
+        id="articleHero">
+
+        <div class="article-hero-overlay"></div>
+
+        <div class="container">
+
+            <div class="article-hero-content">
+
+                <span class="hero-badge"
+                    id="articleCategory">
+                    Technology
+                </span>
+
+                <h1 id="articleTitle">
+                    Technology Trends That Are Changing Our Future
+                </h1>
+
+                <div class="article-meta">
+
+                    <span id="articleDate">
+                        September 10, 2026
+                    </span>
+
+                    <span>
+                        •
+                    </span>
+
+                    <span id="articleReadTime">
+                        5 min read
+                    </span>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         ARTICLE CONTENT
+    ========================== -->
+
+    <main class="article-section">
+
+        <div class="container">
+
+            <div class="article-layout">
+
+
+                <!-- MAIN ARTICLE -->
+
+                <article class="article-content">
+
+                    <img id="articleImage"
+                        class="article-main-image"
+                        src="images/technology-trends.jpg"
+                        alt="Technology article">
+
+                    <div id="articleBody">
+
+                        <p>
+                            Technology continues to change the way
+                            people live, work and communicate. New
+                            innovations are creating opportunities
+                            across almost every part of everyday life.
+                        </p>
+
+                        <h2>
+                            Technology Is Everywhere
+                        </h2>
+
+                        <p>
+                            From smartphones and cloud services to
+                            artificial intelligence and automation,
+                            technology has become an important part
+                            of modern life.
+                        </p>
+
+                        <p>
+                            Understanding these changes can help
+                            students, professionals and businesses
+                            prepare for the future and make better
+                            use of digital tools.
+                        </p>
+
+                    </div>
+
+
+                    <!-- =========================
+                         SHARE SECTION
+                    ========================== -->
+
+                    <div class="article-actions">
+
+                        <h3>
+                            Share this article
+                        </h3>
+
+                        <div class="share-buttons">
+
+                            <button id="copyLinkBtn"
+                                class="share-btn">
+                                Copy Link
+                            </button>
+
+                            <button id="shareBtn"
+                                class="share-btn">
+                                Share
+                            </button>
+
+                        </div>
+
+                        <p id="shareMessage"
+                            class="share-message">
+                        </p>
+
+                    </div>
+
+
+                    <!-- =========================
+                         COMMENTS
+                    ========================== -->
+
+                    <div class="comments-section">
+
+                        <h2>
+                            Comments
+                        </h2>
+
+                        <form id="commentForm"
+                            class="comment-form">
+
+                            <div class="form-group">
+
+                                <label for="commentName">
+                                    Your Name
+                                </label>
+
+                                <input
+                                    type="text"
+                                    id="commentName"
+                                    placeholder="Enter your name"
+                                    required>
+
+                            </div>
+
+                            <div class="form-group">
+
+                                <label for="commentText">
+                                    Your Comment
+                                </label>
+
+                                <textarea
+                                    id="commentText"
+                                    rows="5"
+                                    placeholder="Write your comment..."
+                                    required></textarea>
+
+                            </div>
+
+                            <button
+                                type="submit"
+                                class="btn btn-primary">
+                                Post Comment
+                            </button>
+
+                        </form>
+
+
+                        <div id="commentsList"
+                            class="comments-list">
+
+                            <p class="no-comments">
+                                No comments yet. Be the first to comment!
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                </article>
+
+
+                <!-- =========================
+                     SIDEBAR
+                ========================== -->
+
+                <aside class="article-sidebar">
+
+                    <div class="sidebar-card">
+
+                        <h3>
+                            About NovaBlog
+                        </h3>
+
+                        <p>
+                            NovaBlog shares useful ideas, stories
+                            and inspiration across technology,
+                            travel, food and lifestyle.
+                        </p>
+
+                    </div>
+
+
+                    <div class="sidebar-card">
+
+                        <h3>
+                            Explore
+                        </h3>
+
+                        <div class="sidebar-links">
+
+                            <a href="technology.html">
+                                Technology
+                            </a>
+
+                            <a href="travel.html">
+                                Travel
+                            </a>
+
+                            <a href="food.html">
+                                Food
+                            </a>
+
+                            <a href="lifestyle.html">
+                                Lifestyle
+                            </a>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="sidebar-card">
+
+                        <h3>
+                            Back to Articles
+                        </h3>
+
+                        <a href="index.html"
+                            class="btn btn-primary sidebar-btn">
+                            Explore NovaBlog
+                        </a>
+
+                    </div>
+
+                </aside>
+
+            </div>
+
+        </div>
+
+    </main>
+
+
+    <!-- =========================
+         FOOTER
+    ========================== -->
+
+    <footer class="footer">
+
+        <div class="container">
+
+            <div class="footer-inner">
+
+
+                <div>
+
+                    <h3>
+                        NovaBlog
+                    </h3>
+
+                    <p>
+                        Ideas, stories and inspiration for
+                        everyday life.
+                    </p>
+
+                </div>
+
+
+                <div>
+
+                    <h3>
+                        Explore
+                    </h3>
+
+                    <div class="footer-links">
+
+                        <a href="index.html">
+                            Home
+                        </a>
+
+                        <a href="technology.html">
+                            Technology
+                        </a>
+
+                        <a href="travel.html">
+                            Travel
+                        </a>
+
+                        <a href="food.html">
+                            Food
+                        </a>
+
+                        <a href="lifestyle.html">
+                            Lifestyle
+                        </a>
+
+                    </div>
+
+                </div>
+
+
+                <div>
+
+                    <h3>
+                        Topics
+                    </h3>
+
+                    <div class="footer-links">
+
+                        <a href="technology.html">
+                            Technology
+                        </a>
+
+                        <a href="travel.html">
+                            Travel
+                        </a>
+
+                        <a href="food.html">
+                            Food
+                        </a>
+
+                        <a href="lifestyle.html">
+                            Lifestyle
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="footer-bottom">
+
+                <p>
+                    © 2026 NovaBlog. All rights reserved.
+                </p>
+
+            </div>
+
+        </div>
+
+    </footer>
+
+
+    <!-- JAVASCRIPT -->
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
