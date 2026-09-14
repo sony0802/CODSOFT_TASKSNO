@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta
+        name="description"
+        content="TaskFlow - A responsive task management application for organizing daily activities."
+    >
+
+    <title>TaskFlow | Task Management</title>
+
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    >
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- ================= HEADER ================= -->
+    <header class="header">
+        <div class="container header-inner">
+
+            <a href="#" class="logo">
+                <span class="logo-icon">
+                    <i class="fa-solid fa-check"></i>
+                </span>
+                Task<span>Flow</span>
+            </a>
+
+            <div class="header-actions">
+
+                <button
+                    type="button"
+                    class="icon-btn"
+                    id="themeBtn"
+                    aria-label="Toggle dark mode"
+                    title="Toggle dark mode"
+                >
+                    <i class="fa-solid fa-moon"></i>
+                </button>
+
+                <button
+                    type="button"
+                    class="profile-btn"
+                    aria-label="User profile"
+                >
+                    <span class="profile-avatar">S</span>
+                    <span class="profile-name">My Tasks</span>
+                </button>
+
+            </div>
+
+        </div>
+    </header>
+
+
+    <!-- ================= MAIN ================= -->
+    <main class="main">
+        <div class="container">
+
+            <!-- ================= HERO ================= -->
+            <section class="welcome-section">
+
+                <div>
+                    <p class="welcome-label">
+                        <i class="fa-regular fa-calendar-check"></i>
+                        Stay organized
+                    </p>
+
+                    <h1>Manage your tasks with ease.</h1>
+
+                    <p class="welcome-text">
+                        Plan your day, track your progress and get things done
+                        efficiently.
+                    </p>
+                </div>
+
+                <button type="button" class="add-task-btn" id="openModalBtn">
+                    <i class="fa-solid fa-plus"></i>
+                    Add Task
+                </button>
+
+            </section>
+
+
+            <!-- ================= STATISTICS ================= -->
+            <section class="stats-grid" aria-label="Task statistics">
+
+                <div class="stat-card">
+                    <div class="stat-icon total-icon">
+                        <i class="fa-solid fa-list-check"></i>
+                    </div>
+
+                    <div>
+                        <span class="stat-label">Total Tasks</span>
+                        <strong id="totalTasks">0</strong>
+                    </div>
+                </div>
+
+
+                <div class="stat-card">
+                    <div class="stat-icon pending-icon">
+                        <i class="fa-regular fa-clock"></i>
+                    </div>
+
+                    <div>
+                        <span class="stat-label">Pending</span>
+                        <strong id="pendingTasks">0</strong>
+                    </div>
+                </div>
+
+
+                <div class="stat-card">
+                    <div class="stat-icon completed-icon">
+                        <i class="fa-solid fa-circle-check"></i>
+                    </div>
+
+                    <div>
+                        <span class="stat-label">Completed</span>
+                        <strong id="completedTasks">0</strong>
+                    </div>
+                </div>
+
+            </section>
+
+
+            <!-- ================= TOOLBAR ================= -->
+            <section class="task-section">
+
+                <div class="section-heading">
+                    <div>
+                        <h2>My Tasks</h2>
+                        <p>Organize and track your daily activities.</p>
+                    </div>
+                </div>
+
+
+                <div class="toolbar">
+
+                    <!-- Search -->
+                    <div class="search-box">
+                        <i class="fa-solid fa-magnifying-glass"></i>
+
+                        <input
+                            type="search"
+                            id="searchInput"
+                            placeholder="Search tasks..."
+                            aria-label="Search tasks"
+                        >
+                    </div>
+
+
+                    <!-- Status -->
+                    <div class="filter-control">
+                        <label for="statusFilter">Status</label>
+
+                        <select id="statusFilter">
+                            <option value="all">All Tasks</option>
+                            <option value="pending">Pending</option>
+                            <option value="completed">Completed</option>
+                        </select>
+                    </div>
+
+
+                    <!-- Category -->
+                    <div class="filter-control">
+                        <label for="categoryFilter">Category</label>
+
+                        <select id="categoryFilter">
+                            <option value="all">All Categories</option>
+                            <option value="work">Work</option>
+                            <option value="personal">Personal</option>
+                            <option value="study">Study</option>
+                            <option value="health">Health</option>
+                            <option value="shopping">Shopping</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+
+
+                    <!-- Sort -->
+                    <div class="filter-control">
+                        <label for="sortFilter">Sort</label>
+
+                        <select id="sortFilter">
+                            <option value="newest">Newest</option>
+                            <option value="oldest">Oldest</option>
+                            <option value="priority">Priority</option>
+                            <option value="dueDate">Due Date</option>
+                        </select>
+                    </div>
+
+                </div>
+
+
+                <!-- ================= TASK LIST ================= -->
+                <div id="taskList" class="task-list"></div>
+
+
+                <!-- ================= EMPTY STATE ================= -->
+                <div id="emptyState" class="empty-state">
+
+                    <div class="empty-icon">
+                        <i class="fa-solid fa-clipboard-list"></i>
+                    </div>
+
+                    <h3>No tasks found</h3>
+
+                    <p>
+                        Add a new task or change your filters to see your tasks.
+                    </p>
+
+                    <button
+                        type="button"
+                        class="empty-btn"
+                        id="emptyAddBtn"
+                    >
+                        <i class="fa-solid fa-plus"></i>
+                        Create Your First Task
+                    </button>
+
+                </div>
+
+            </section>
+
+        </div>
+    </main>
+
+
+    <!-- ================= TASK MODAL ================= -->
+    <div class="modal-overlay" id="taskModal">
+
+        <div
+            class="modal"
+            role="dialog"
+            aria-modal="true"
+            aria-labelledby="modalTitle"
+        >
+
+            <div class="modal-header">
+
+                <div>
+                    <p class="modal-label">Task Manager</p>
+                    <h2 id="modalTitle">Create New Task</h2>
+                </div>
+
+                <button
+                    type="button"
+                    class="close-btn"
+                    id="closeModalBtn"
+                    aria-label="Close"
+                >
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+
+            </div>
+
+
+            <form id="taskForm" novalidate>
+
+                <div class="form-group">
+
+                    <label for="taskTitle">
+                        Task Title <span>*</span>
+                    </label>
+
+                    <input
+                        type="text"
+                        id="taskTitle"
+                        placeholder="e.g. Complete project report"
+                        maxlength="80"
+                        autocomplete="off"
+                    >
+
+                    <div class="input-footer">
+                        <small class="error-message" id="titleError"></small>
+                        <small id="titleCounter">0/80</small>
+                    </div>
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="taskDescription">
+                        Description
+                    </label>
+
+                    <textarea
+                        id="taskDescription"
+                        rows="4"
+                        maxlength="250"
+                        placeholder="Add some details about your task..."
+                    ></textarea>
+
+                    <div class="input-footer">
+                        <small class="error-message" id="descriptionError"></small>
+                        <small id="descriptionCounter">0/250</small>
+                    </div>
+
+                </div>
+
+
+                <div class="form-row">
+
+                    <div class="form-group">
+
+                        <label for="taskCategory">
+                            Category
+                        </label>
+
+                        <select id="taskCategory">
+                            <option value="work">Work</option>
+                            <option value="personal">Personal</option>
+                            <option value="study">Study</option>
+                            <option value="health">Health</option>
+                            <option value="shopping">Shopping</option>
+                            <option value="other">Other</option>
+                        </select>
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="taskPriority">
+                            Priority
+                        </label>
+
+                        <select id="taskPriority">
+                            <option value="low">Low</option>
+                            <option value="medium" selected>Medium</option>
+                            <option value="high">High</option>
+                        </select>
+
+                    </div>
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="taskDueDate">
+                        Due Date
+                    </label>
+
+                    <input
+                        type="date"
+                        id="taskDueDate"
+                    >
+
+                    <small class="error-message" id="dateError"></small>
+
+                </div>
+
+
+                <div class="modal-actions">
+
+                    <button
+                        type="button"
+                        class="cancel-btn"
+                        id="cancelModalBtn"
+                    >
+                        Cancel
+                    </button>
+
+                    <button
+                        type="submit"
+                        class="save-btn"
+                        id="saveTaskBtn"
+                    >
+                        <i class="fa-solid fa-check"></i>
+                        Save Task
+                    </button>
+
+                </div>
+
+            </form>
+
+        </div>
+
+    </div>
+
+
+    <!-- ================= TOAST ================= -->
+    <div
+        class="toast"
+        id="toast"
+        role="status"
+        aria-live="polite"
+    >
+        <i class="fa-solid fa-circle-check"></i>
+        <span id="toastMessage">Task saved successfully.</span>
+    </div>
+
+
+    <script src="script.js"></script>
+
+</body>
+</html>
