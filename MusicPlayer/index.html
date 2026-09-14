@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Music Player</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+
+<body>
+
+    <div class="music-player">
+
+        <!-- Header -->
+        <div class="header">
+            <h2><i class="fa-solid fa-music"></i> Music Player</h2>
+
+            <button id="favoriteBtn">
+                <i class="fa-regular fa-heart"></i>
+            </button>
+        </div>
+
+        <!-- Album Image -->
+        <div class="album-container">
+            <img id="albumImage" src="images/song1.jpg" alt="Album Artwork">
+        </div>
+
+        <!-- Song Information -->
+        <div class="song-info">
+            <h2 id="songTitle">Song One</h2>
+            <p id="artistName">Artist One</p>
+            <p id="albumName">My Album</p>
+        </div>
+
+        <!-- Progress -->
+        <div class="progress-area">
+
+            <div class="time">
+                <span id="currentTime">0:00</span>
+                <span id="duration">0:00</span>
+            </div>
+
+            <input type="range"
+                   id="progressBar"
+                   value="0"
+                   min="0"
+                   max="100">
+
+        </div>
+
+        <!-- Main Controls -->
+        <div class="controls">
+
+            <button id="shuffleBtn" title="Shuffle">
+                <i class="fa-solid fa-shuffle"></i>
+            </button>
+
+            <button id="previousBtn" title="Previous">
+                <i class="fa-solid fa-backward-step"></i>
+            </button>
+
+            <button class="play-button" id="playBtn" title="Play">
+                <i class="fa-solid fa-play"></i>
+            </button>
+
+            <button id="nextBtn" title="Next">
+                <i class="fa-solid fa-forward-step"></i>
+            </button>
+
+            <button id="repeatBtn" title="Repeat">
+                <i class="fa-solid fa-repeat"></i>
+            </button>
+
+        </div>
+
+        <!-- Volume -->
+        <div class="volume-control">
+
+            <button id="muteBtn">
+                <i class="fa-solid fa-volume-high"></i>
+            </button>
+
+            <input type="range"
+                   id="volumeBar"
+                   min="0"
+                   max="1"
+                   step="0.01"
+                   value="1">
+
+        </div>
+
+        <!-- Playlist -->
+        <div class="playlist">
+
+            <h3>
+                <i class="fa-solid fa-list"></i>
+                Playlist
+            </h3>
+
+            <div id="playlistContainer"></div>
+
+        </div>
+
+        <!-- Audio -->
+        <audio id="audio"></audio>
+
+    </div>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
